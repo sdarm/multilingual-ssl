@@ -108,7 +108,10 @@
                     const lesson = source.lessons[lessonNo];
                     const dailyLesson = lesson.dailyLessons[dailyLessonIndex];
                     const subsection = dailyLesson.subsections[subsectionIndex];
-                    const question = subsection.q[questionIndex];
+                    let question = subsection.q[questionIndex];
+                    if (!question?.text) {
+                        question = { text: "" };
+                    }
                     if (question.text.trim() === "") continue;
                     const $lang = $("<div>", { class: "language-block", "data-lang": lang });
                     $qWrapper.append($lang);
@@ -151,8 +154,10 @@
                     const lesson = source.lessons[lessonNo];
                     const dailyLesson = lesson.dailyLessons[dailyLessonIndex];
                     const subsection = dailyLesson.subsections[subsectionIndex];
-                    const note = subsection.note[noteIndex];
-                    if (note.text.trim() === "") continue;
+                    let note = subsection.note[noteIndex];
+                    if (!note?.text || note?.text?.trim() === "") {
+                        note = { text: "" };
+                    }
                     const $lang = $("<div>", { class: "language-block", "data-lang": lang });
                     $noteWrapper.append($lang);
                     let noteText = note.text;
