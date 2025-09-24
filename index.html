@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SSL Multilingual – Report Parameters</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="bg-decor" aria-hidden="true"></div>
+      <section class="card" role="region" aria-labelledby="form-title">
+        <header class="card__header">
+          <div class="brand">
+            <div class="brand__logo" aria-hidden="true">🌐</div>
+            <div class="brand__text">
+              <h1 id="form-title"></h1>
+              <p class="subtitle">Choose year, quarter (1–3) and up to three languages</p>
+            </div>
+          </div>
+        </header>
+
+        <form id="params-form" class="form" novalidate>
+          <div class="form__row">
+            <div class="field">
+              <label for="year">Year</label>
+              <input id="year" name="year" type="number" inputmode="numeric" min="2000" max="2100" step="1" placeholder="YYYY" required />
+              <small class="hint">Between 2000 and 2100</small>
+              <div class="error" aria-live="polite"></div>
+            </div>
+
+            <fieldset class="field">
+              <legend>Quarter</legend>
+              <div class="segmented" role="radiogroup" aria-label="Quarter">
+                <label class="segmented__option">
+                  <input type="radio" name="quarter" value="1" required />
+                  <span>Q1</span>
+                </label>
+                <label class="segmented__option">
+                  <input type="radio" name="quarter" value="2" />
+                  <span>Q2</span>
+                </label>
+                <label class="segmented__option">
+                  <input type="radio" name="quarter" value="3" />
+                  <span>Q3</span>
+                </label>
+              </div>
+              <div class="error" aria-live="polite"></div>
+            </fieldset>
+          </div>
+
+          <div class="field">
+            <label>Languages
+              <span class="tag tag--muted" id="lang-counter">0/3 selected</span>
+            </label>
+            <div class="chips" id="languages" role="group" aria-label="Languages">
+              <label class="chip">
+                <input type="checkbox" name="languages" value="RO" />
+                <span>RO</span>
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="languages" value="MK" />
+                <span>MK</span>
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="languages" value="SRB" />
+                <span>SRB</span>
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="languages" value="ES" />
+                <span>ES</span>
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="languages" value="IT" />
+                <span>IT</span>
+              </label>
+            </div>
+            <small class="hint">Pick 1 to 3 languages</small>
+            <div class="error" aria-live="polite" id="lang-error"></div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" type="submit" id="submit-btn" disabled>
+              Submit
+            </button>
+          </div>
+
+          <output id="result" class="result" aria-live="polite"></output>
+        </form>
+      </section>
+      <footer class="footer">
+        <small>SSL Multilingual • Demo UI</small>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
