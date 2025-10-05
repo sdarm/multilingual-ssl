@@ -1,3 +1,15 @@
+/* ===== GENERAL STYLES ===== */
+p {
+    text-align: justify;
+}
+
+/* ===== TITLE ===== */
+.title h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+/* ===== LANGUAGE WRAPPER FLEXBOX ===== */
 .lang-wrapper {
     display: flex;
     gap: 30px;
@@ -8,7 +20,7 @@
     flex-basis: 0;
 }
 
-
+/* ===== HEADERS ===== */
 .header h2 {
     font-size: 0.7em;
     background: #ebebeb;
@@ -22,41 +34,32 @@
     float: right;
 }
 
-
-
-.title h1 {
-    text-align: center;
-    font-size: 1em;
+/* ===== SECTION TITLE ===== */
+.section-title h2 {
+    background: #ebebeb;
+    padding: 5px;
 }
 
-p {
-    text-align: justify;
-}
-
-
-
-
+/* ===== READING SECTION ===== */
 .reading h3 {
     background: #ebebeb;
     font-size: 0.7em;
     padding: 2px 5px;
     margin-bottom: 0;
 }
+
 .reading ul {
     margin: 0;
     list-style: none;
     padding-left: 5px;
-    & li {
-        font-size: 0.7em;
-        padding: 0;
-    }
 }
 
-.section-title h2 {
-    background: #ebebeb;
-    padding: 5px;
+.reading ul li {
+    font-size: 0.7em;
+    padding: 0;
 }
 
+/* ===== QUESTIONS ===== */
 .question p {
     font-weight: bold;
     margin-bottom: 0;
@@ -65,4 +68,12 @@ p {
 .question-note p {
     border-top: 1px solid #ebebeb;
     padding: 29px 0;
+}
+
+/* ===== PRINT STYLES: Preserve Backgrounds ===== */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
 }
