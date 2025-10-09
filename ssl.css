@@ -1,6 +1,9 @@
+* {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
 /* ===== GENERAL STYLES ===== */
 p {
-    text-align: justify;
+    text-align: left;
 }
 
 /* ===== TITLE ===== */
