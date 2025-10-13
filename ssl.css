@@ -1,5 +1,6 @@
 * {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    box-sizing: border-box;
 }
 /* ===== GENERAL STYLES ===== */
 p {
@@ -9,18 +10,19 @@ p {
 /* ===== TITLE ===== */
 .title h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.2em;
 }
 
 /* ===== LANGUAGE WRAPPER FLEXBOX ===== */
 .lang-wrapper {
     display: flex;
-    gap: 30px;
+    gap: 15px;
 }
 
 .lang-wrapper > div {
     flex-grow: 1;
     flex-basis: 0;
+    min-width: 1px;
 }
 
 /* ===== HEADERS ===== */
@@ -41,6 +43,7 @@ p {
 .section-title h2 {
     background: #ebebeb;
     padding: 5px;
+    font-size: 1.1em;
 }
 
 /* ===== READING SECTION ===== */
@@ -66,11 +69,6 @@ p {
 .question p {
     font-weight: bold;
     margin-bottom: 0;
-}
-
-.question-note p {
-    border-top: 1px solid #ebebeb;
-    padding: 29px 0;
 }
 
 /* ===== PRINT STYLES: Preserve Backgrounds ===== */
